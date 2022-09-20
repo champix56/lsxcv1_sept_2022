@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE factures [
+	<!ELEMENT factures (facture+)>
+	<!ELEMENT facture (client,lignes)>
+	<!ELEMENT client (nom|mail)>
+	<!ELEMENT nom (#PCDATA)>
+	<!ELEMENT mail (#PCDATA)>
+	<!ELEMENT lignes (ligne*)>
+	<!ELEMENT ligne (#PCDATA)>
+	
+	<!ATTLIST facture
+		numfact CDATA #REQUIRED
+		id ID #REQUIRED>
+]>
+<factures>
+	<facture numfact="12" id="F23">
+		<client>
+			<nom>DESORBAIX</nom>
+		</client>
+		<lignes>
+			<ligne>12.98</ligne>
+		</lignes>
+	</facture>
+	<facture id="F56" numfact="55">
+		<client>
+			<mail></mail>
+		</client>
+		<lignes><ligne></ligne></lignes>
+	</facture>
+</factures>
