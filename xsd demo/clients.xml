@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clients xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="clients.xsd">
+	<client>
+		<nom>DESORBAIX</nom>
+	</client>
+	<client>
+		<nom>PIERRE</nom>
+	</client>
+</clients>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<factures xmlns="urn:orsys:demo:xsd:factures" xmlns:c="urn:orsys:demo:xsd:clients" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:orsys:demo:xsd:factures factures.xsd">
+	<facture numfact="12" id="F23">
+		<c:client>
+			<c:nom>DESORBAIX</c:nom>
+		</c:client>
+		<lignes>
+			<ligne>12.98</ligne>
+		</lignes>
+	</facture>
+	<facture id="F56" numfact="55">
+		<c:client>
+			<c:mail/>
+		</c:client>
+		<lignes>
+			<ligne/>
+		</lignes>
+	</facture>
+</factures>
