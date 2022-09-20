@@ -1,0 +1,29 @@
+body
+{
+	background-color: #ffffff;
+	color: #000000;
+}
+facture{margin-top:10px;display:block; border: 5px double black; height:auto;}
+client{ border: 1px solid black;
+display:block;margin-left:60%;width:30%;margin-top:100px;}
+lignes{  
+display:block;
+margin-bottom:10px;
+
+margin-top:100px;
+padding-top:10px;
+}
+ligne{
+font-size:1em;
+display:block;
+border:1px solid black;
+margin-top:10px;
+background-color:lightgrey;
+}
+ref{
+width:10%;
+}
+designation{width:65%;text-align:center;}
+phtByUnit{ width:10%;}
+nbUnit{width:5%;}
+surface{width:5%; }

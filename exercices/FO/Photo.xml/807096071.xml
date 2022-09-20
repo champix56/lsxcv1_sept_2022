@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="807096071.xsl"?>
+<photos xmlns:fo="http://www.w3.org/1999/XSL/Format" theme="fond1317027317.png" OnlyComment="false" intercal="true">
+	<titre>chartres</titre>
+	<couv>
+		<image href="H97C9131.jpg" path="C:\signed\"/>
+	</couv>
+	<pages>
+		<page>
+			<image href="S_H97C8971.jpg" path="C:\signed\"/>
+			<image href="S_H97C8976.jpg" path="C:\signed\"/>
+			<image href="S_H97C9008.jpg" path="C:\signed\"/>
+			<image href="S_H97C9047b.jpg" path="C:\signed\"/>
+			<image href="S_H97C9076b.jpg" path="C:\signed\"/>
+		</page>
+		<page>
+			<image href="S_H97C9131.jpg" path="C:\signed\"/>
+			<image href="S_H97C9131COl.jpg" path="C:\signed\"/>
+			<image href="S_H97C9173.jpg" path="C:\signed\"/>
+			<image href="S_H97C9181.jpg" path="C:\signed\"/>
+		</page>
+		<page>
+			<image href="S_H97C9193.jpg" path="C:\signed\"/>
+		</page>
+	</pages>
+	<signature>desorbaix@free.fr</signature>
+</photos>

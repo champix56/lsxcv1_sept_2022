@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="cv.css" type="text/css"?>
+<cvs>
+	<cv idcv="cv-ad">
+		<ident>
+			<nom>Devaux</nom>
+			<prenom>Alexandre</prenom>
+			<datenaiss>1990-11-19</datenaiss>
+			<tel>0123456789</tel>
+			<mail>a.devaux@chmouscron.be</mail>
+			<permis>Oui</permis>
+			<vehicule>true</vehicule>
+			<langues>
+				<langue matern="true" langName="français"/>
+				<langue matern="false" lu="true" parle="true" ecrit="true" langName="anglais"/>
+			</langues>
+		</ident>
+		<phraseAccroche>That's all folks!</phraseAccroche>
+		<formations>
+			<formation>
+				<anneeDeb>2020</anneeDeb>
+				<anneeFin>2020</anneeFin>
+				<lieu>CHM</lieu>
+				<diplomes>
+					<diplome>
+						<intitule>PRINCE2 Foundation</intitule>
+						<obtenu>true</obtenu>
+					</diplome>
+					<diplome>
+						<intitule>PRINCE2 Practitioner</intitule>
+						<obtenu>true</obtenu>
+					</diplome>
+				</diplomes>
+			</formation>
+			<formation>
+				<anneeDeb>2019</anneeDeb>
+				<anneeFin>2020</anneeFin>
+				<lieu>Promotion Sociale Saint-Henri</lieu>
+				<diplomes>
+					<diplome>
+						<intitule>Gestion de base</intitule>
+						<obtenu>true</obtenu>
+					</diplome>
+				</diplomes>
+			</formation>
+			<formation>
+				<anneeDeb>2008</anneeDeb>
+				<anneeFin>2014</anneeFin>
+				<lieu>Université de Mons</lieu>
+				<diplomes>
+					<diplome>
+						<intitule>Maîtrise en Sciences Informatiques</intitule>
+						<obtenu>true</obtenu>
+					</diplome>
+				</diplomes>
+			</formation>
+		</formations>
+		<experiences>
+			<experience>
+				<dateDeb>2015</dateDeb>
+				<dateFin>2016</dateFin>
+				<ets>BPost</ets>
+				<etsCmpl>La poste</etsCmpl>
+				<intitule>Analyste en architecture</intitule>
+			</experience>
+			<experience>
+				<dateDeb>2016</dateDeb>
+				<dateFin>2018</dateFin>
+				<ets>CHWAPI</ets>
+				<etsCmpl>Centre Hospitalier Wallonie Picarde</etsCmpl>
+				<intitule>Analyste/Développeur</intitule>
+			</experience>
+			<experience>
+				<dateDeb>2018</dateDeb>
+				<dateFin>2020</dateFin>
+				<ets>CHM</ets>
+				<etsCmpl>Centre Hospitalier de Mouscron</etsCmpl>
+				<intitule>Analyste/Développeur/Chef de Projet</intitule>
+			</experience>
+		</experiences>
+	</cv>
+	<cv idcv="cv-cs">
+		<ident>
+			<nom>Speckens</nom>
+			<prenom>Corentin</prenom>
+			<datenaiss>1991-11-22</datenaiss>
+			<tel>056858383</tel>
+			<mail>c.speckens@chmouscron.be</mail>
+			<permis>B</permis>
+			<vehicule>true</vehicule>
+			<langues>
+				<langue parle="false" matern="true" lu="false" langName="Francais" ecrit="false"/>
+				<langue parle="true" matern="false" lu="true" langName="Anglais" ecrit="false"/>
+			</langues>
+		</ident>
+		<phraseAccroche>SpeckMan</phraseAccroche>
+		<formations>
+			<formation>
+				<anneeDeb>2005</anneeDeb>
+				<anneeFin>2016</anneeFin>
+				<lieu>Tournai</lieu>
+				<diplomes>
+					<diplome>
+						<intitule>Secondaire</intitule>
+						<obtenu>true</obtenu>
+					</diplome>
+					<diplome>
+						<intitule>Bachelier</intitule>
+						<obtenu>true</obtenu>
+					</diplome>
+				</diplomes>
+			</formation>
+			<formation>
+				<anneeDeb>2020</anneeDeb>
+				<anneeFin>2020</anneeFin>
+				<lieu>Mouscron</lieu>
+				<diplomes>
+					<diplome>
+						<intitule>Qrp Prince 2</intitule>
+						<obtenu>true</obtenu>
+					</diplome>
+					<diplome>
+						<intitule>Xperthis Formulaire</intitule>
+						<obtenu>true</obtenu>
+					</diplome>
+				</diplomes>
+			</formation>
+		</formations>
+		<experiences>
+			<experience>
+				<dateDeb>2016</dateDeb>
+				<dateFin>2016</dateFin>
+				<ets>Centre Hospitalier de Mouscron</ets>
+				<etsCmpl/>
+				<intitule>Developpeur stagiaire</intitule>
+			</experience>
+			<experience>
+				<dateDeb>2016</dateDeb>
+				<dateFin>2020</dateFin>
+				<ets>Centre Hospitalier de Mouscron</ets>
+				<etsCmpl/>
+				<intitule>Developpeur</intitule>
+			</experience>
+		</experiences>
+	</cv>
+	<cv idcv="cv-fs">
+		<ident>
+			<nom>Schietse</nom>
+			<prenom>François</prenom>
+			<datenaiss>1990-09-04</datenaiss>
+			<tel>0472560758</tel>
+			<mail>f.schietse@gmail.com</mail>
+			<permis>B</permis>
+			<vehicule>true</vehicule>
+			<langues>
+				<langue parle="true" matern="true" lu="true" langName="Français" ecrit="true"/>
+				<langue parle="true" matern="true" lu="true" langName="Anglais" ecrit="true"/>
+			</langues>
+		</ident>
+		<phraseAccroche>Hello World !</phraseAccroche>
+		<formations>
+			<formation>
+				<anneeDeb>2008</anneeDeb>
+				<anneeFin>2011</anneeFin>
+				<lieu>Mons</lieu>
+				<diplomes>
+					<diplome>
+						<intitule>Bachelier en informatique de gestion</intitule>
+						<obtenu>true</obtenu>
+					</diplome>
+				</diplomes>
+			</formation>
+			<formation>
+				<anneeDeb>2020</anneeDeb>
+				<anneeFin>2020</anneeFin>
+				<lieu>Mouscron</lieu>
+				<diplomes>
+					<diplome>
+						<intitule>Prince2 Foundation</intitule>
+						<obtenu>true</obtenu>
+					</diplome>
+					<diplome>
+						<intitule>Prince2 Practionner</intitule>
+						<obtenu>true</obtenu>
+					</diplome>
+				</diplomes>
+			</formation>
+		</formations>
+		<experiences>
+			<experience>
+				<dateDeb>2011</dateDeb>
+				<dateFin>2011</dateFin>
+				<ets>Alfea</ets>
+				<etsCmpl>SSII</etsCmpl>
+				<intitule>Ingénieur d'étude</intitule>
+			</experience>
+			<experience>
+				<dateDeb>2011</dateDeb>
+				<dateFin>2016</dateFin>
+				<ets>CHWAPI</ets>
+				<etsCmpl>Centre Hospitalier de Wallonie Picarde</etsCmpl>
+				<intitule>Expert applications métiers</intitule>
+			</experience>
+			<experience>
+				<dateDeb>2016</dateDeb>
+				<dateFin>2020</dateFin>
+				<ets>CHM</ets>
+				<etsCmpl>Centre hospitalier de Mouscron</etsCmpl>
+				<intitule>Analyste/Développeur</intitule>
+			</experience>
+		</experiences>
+	</cv>
+	<cv idcv="cv-jp">
+		<ident>
+			<nom>PLANTEFEVE</nom>
+			<prenom>JOFFREY</prenom>
+			<datenaiss>1980-08-21</datenaiss>
+			<tel>056858741</tel>
+			<mail>j.plantefeve@chmouscron.be</mail>
+			<permis>B</permis>
+			<vehicule>true</vehicule>
+			<langues>
+				<langue parle="true" matern="true" lu="true" langName="FRANCAIS" ecrit="true"/>
+				<langue parle="true" matern="false" lu="true" langName="NEERLANDAIS" ecrit="true"/>
+				<langue parle="true" matern="false" lu="true" langName="ANGLAIS" ecrit="true"/>
+				<langue parle="false" matern="false" lu="true" langName="ESPAGNOL" ecrit="true"/>
+			</langues>
+		</ident>
+		<phraseAccroche>Joffrey Plantefeve</phraseAccroche>
+		<formations>
+			<formation>
+				<anneeDeb>2009</anneeDeb>
+				<anneeFin>2014</anneeFin>
+				<lieu>Universite Mons Hainaut</lieu>
+				<diplomes>
+					<diplome>
+						<intitule>Candidat en mathématique</intitule>
+						<obtenu>true</obtenu>
+					</diplome>
+					<diplome>
+						<intitule>Master en matéhmatique informatique</intitule>
+						<obtenu>true</obtenu>
+					</diplome>
+					<diplome>
+						<intitule>DEA INFORMATIQUE </intitule>
+						<obtenu>true</obtenu>
+					</diplome>
+				</diplomes>
+			</formation>
+			<formation>
+				<anneeDeb>2018</anneeDeb>
+				<anneeFin>2018</anneeFin>
+				<lieu>Namur</lieu>
+				<diplomes>
+					<diplome>
+						<intitule>PRINCE 2 FONDAMENTAL</intitule>
+						<obtenu>true</obtenu>
+					</diplome>
+					<diplome>
+						<intitule>PRINCE 2 PRATITIONNER</intitule>
+						<obtenu>true</obtenu>
+					</diplome>
+				</diplomes>
+			</formation>
+		</formations>
+		<experiences>
+			<experience>
+				<dateDeb>2002</dateDeb>
+				<dateFin>2004</dateFin>
+				<ets>NESTLE</ets>
+				<etsCmpl/>
+				<intitule>ANALYSTE PROGRAMMEUR AUTOMATE </intitule>
+			</experience>
+			<experience>
+				<dateDeb>2003</dateDeb>
+				<dateFin>2008</dateFin>
+				<ets>CENTRE HOSPITALIER UNIVERSITAIRE DE TIVOLI</ets>
+				<etsCmpl/>
+				<intitule>Responsable Infrastructure</intitule>
+			</experience>
+			<experience>
+				<dateDeb>2008</dateDeb>
+				<dateFin>2020</dateFin>
+				<ets>CENTRE HOSPITALIER DE MOUSCRON</ets>
+				<etsCmpl/>
+				<intitule>RESPONSABLE IT</intitule>
+			</experience>
+		</experiences>
+	</cv>
+	<cv idcv="cv-nh">
+		<ident>
+			<nom>Hondeghem</nom>
+			<prenom>Nicolas</prenom>
+			<datenaiss>1987-05-11</datenaiss>
+			<tel>8470</tel>
+			<mail>n.hondeghem@chmouscron.be</mail>
+			<permis>B</permis>
+			<vehicule>true</vehicule>
+			<langues>
+				<langue langName="francais" matern="1"/>
+			</langues>
+		</ident>
+		<phraseAccroche>Bonjour</phraseAccroche>
+		<formations>
+			<formation>
+				<anneeDeb>2005</anneeDeb>
+				<anneeFin>2007</anneeFin>
+				<lieu>Villeneuve D'acq</lieu>
+				<diplomes>
+					<diplome>
+						<intitule>Analyste-Developper</intitule>
+						<obtenu>true</obtenu>
+					</diplome>
+					<diplome>
+						<intitule>Licence Informatique</intitule>
+						<obtenu>true</obtenu>
+					</diplome>
+				</diplomes>
+			</formation>
+			<formation>
+				<anneeDeb>2020</anneeDeb>
+				<anneeFin>2020</anneeFin>
+				<lieu>Mouscron</lieu>
+				<diplomes>
+					<diplome>
+						<intitule>Prince 2 Foundation</intitule>
+						<obtenu>true</obtenu>
+					</diplome>
+					<diplome>
+						<intitule>Prince 2 Practitioner</intitule>
+						<obtenu>true</obtenu>
+					</diplome>
+				</diplomes>
+			</formation>
+		</formations>
+		<experiences>
+			<experience>
+				<dateDeb>2005</dateDeb>
+				<dateFin>2005</dateFin>
+				<ets>Daucy</ets>
+				<etsCmpl/>
+				<intitule>Magasinier</intitule>
+			</experience>
+			<experience>
+				<dateDeb>2013</dateDeb>
+				<dateFin>2021</dateFin>
+				<ets>CHMouscron</ets>
+				<etsCmpl/>
+				<intitule>Dev</intitule>
+			</experience>
+		</experiences>
+	</cv>
+	<cv idcv="cv-sc">
+		<ident>
+			<nom>Cammisuli</nom>
+			<prenom>Santino</prenom>
+			<datenaiss>1988-10-20</datenaiss>
+			<tel>8945</tel>
+			<mail>s.cammisuli@chmouscron.be</mail>
+			<permis>O</permis>
+			<vehicule>true</vehicule>
+			<langues>
+				<langue parle="true" matern="true" lu="true" langName="Français" ecrit="true"/>
+				<langue parle="true" matern="false" lu="true" langName="Anglais" ecrit="true"/>
+			</langues>
+		</ident>
+		<phraseAccroche>Ma phrase d'accroche</phraseAccroche>
+		<formations>
+			<formation>
+				<anneeDeb>2007</anneeDeb>
+				<anneeFin>2010</anneeFin>
+				<lieu>Condorcet Mons</lieu>
+				<diplomes>
+					<diplome>
+						<intitule>Bachelier informatique de gestion</intitule>
+						<obtenu>true</obtenu>
+					</diplome>
+				</diplomes>
+			</formation>
+			<formation>
+				<anneeDeb>2020</anneeDeb>
+				<anneeFin>2020</anneeFin>
+				<lieu>CHM</lieu>
+				<diplomes>
+					<diplome>
+						<intitule>Prince 2 foundation</intitule>
+						<obtenu>true</obtenu>
+					</diplome>
+				</diplomes>
+			</formation>
+		</formations>
+		<experiences>
+			<experience>
+				<dateDeb>2008</dateDeb>
+				<dateFin>2008</dateFin>
+				<ets>CHM</ets>
+				<etsCmpl>Experience 1</etsCmpl>
+				<intitule>Experience</intitule>
+			</experience>
+			<experience>
+				<dateDeb>2009</dateDeb>
+				<dateFin>2009</dateFin>
+				<ets>CHM</ets>
+				<etsCmpl>Experience 2</etsCmpl>
+				<intitule>Experience</intitule>
+			</experience>
+		</experiences>
+	</cv>
+	<cv idcv="cv-ts">
+		<ident>
+			<nom>SEIJNHAEVE</nom>
+			<prenom>Thierry</prenom>
+			<datenaiss>1961-09-22</datenaiss>
+			<tel>0628593004</tel>
+			<mail/>
+			<permis/>
+			<vehicule>true</vehicule>
+			<langues>
+				<langue langName=""/>
+			</langues>
+		</ident>
+		<phraseAccroche/>
+		<formations>
+			<formation>
+				<anneeDeb>1973</anneeDeb>
+				<anneeFin>1979</anneeFin>
+				<lieu>Mouscron</lieu>
+				<diplomes>
+					<diplome>
+						<intitule>Comptable</intitule>
+						<obtenu>true</obtenu>
+					</diplome>
+				</diplomes>
+			</formation>
+			<formation>
+				<anneeDeb>1981</anneeDeb>
+				<anneeFin>1983</anneeFin>
+				<lieu>Mons</lieu>
+				<diplomes>
+					<diplome>
+						<intitule>Graduat Informatique</intitule>
+						<obtenu>true</obtenu>
+					</diplome>
+				</diplomes>
+			</formation>
+		</formations>
+		<experiences>
+			<experience>
+				<dateDeb>1984</dateDeb>
+				<dateFin>2020</dateFin>
+				<ets>Clinique Le Refuge de la Sainte-Famille</ets>
+				<etsCmpl/>
+				<intitule>Analyste-Programmeur</intitule>
+			</experience>
+		</experiences>
+	</cv>
+	<cv idcv="cv-cv">
+		<ident>
+			<nom>Verhaeghe</nom>
+			<prenom>Christelle</prenom>
+			<datenaiss>1964-06-18</datenaiss>
+			<tel>056858941</tel>
+			<mail>c.verhaeghechmouscron.be</mail>
+			<permis>B</permis>
+			<vehicule>true</vehicule>
+			<langues>
+				<langue parle="true" matern="true" lu="true" langName="Français" ecrit="true"/>
+				<langue parle="true" matern="false" lu="true" langName="Anglais" ecrit="true"/>
+			</langues>
+		</ident>
+		<phraseAccroche>Ma phrase de presentation</phraseAccroche>
+		<formations>
+			<formation>
+				<anneeDeb>1982</anneeDeb>
+				<anneeFin>1984</anneeFin>
+				<lieu>Mons</lieu>
+				<diplomes>
+					<diplome>
+						<intitule>Graduat en informatique</intitule>
+						<obtenu>true</obtenu>
+					</diplome>
+				</diplomes>
+			</formation>
+			<formation>
+				<anneeDeb>2020</anneeDeb>
+				<anneeFin>2020</anneeFin>
+				<lieu>CHM</lieu>
+				<diplomes>
+					<diplome>
+						<intitule>Prince 2 foundation</intitule>
+						<obtenu>true</obtenu>
+					</diplome>
+				</diplomes>
+			</formation>
+		</formations>
+		<experiences>
+			<experience>
+				<dateDeb>1988</dateDeb>
+				<dateFin>1991</dateFin>
+				<ets>Ets Tiberghien</ets>
+				<etsCmpl/>
+				<intitule>Developpeur</intitule>
+			</experience>
+			<experience>
+				<dateDeb>1991</dateDeb>
+				<dateFin>2020</dateFin>
+				<ets>CHM</ets>
+				<etsCmpl/>
+				<intitule>Chef de projet</intitule>
+			</experience>
+		</experiences>
+	</cv>
+</cvs>
