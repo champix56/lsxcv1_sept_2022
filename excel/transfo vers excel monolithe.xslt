@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:html="http://www.w3.org/TR/REC-html40">
 	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
+	<xsl:template match="facture">
+		<Row ss:Height="16.5">
+			<Cell ss:Index="2">
+				<Data ss:Type="String"><xsl:value-of select="@numfacture"/></Data>
+			</Cell>
+			<Cell ss:StyleID="s16">
+				<Data ss:Type="DateTime"><xsl:value-of select="@datefacture"/>T00:00:00.000</Data>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String"><xsl:value-of select="@idclient"/></Data>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String"><xsl:value-of select="@type"/></Data>
+			</Cell>
+			<Cell>
+				<Data ss:Type="String"><xsl:value-of select=".//ref"/></Data>
+			</Cell>
+			<Cell ss:StyleID="s22">
+				<Data ss:Type="Number"><xsl:value-of select="sum(.//stotligne)"/></Data>
+			</Cell>
+		</Row>
+	</xsl:template>
+	<!--<xsl:template match="facture[contains(@type,'evis')]">
+		
+	</xsl:template>-->
 	<xsl:template match="/">
 		<xsl:processing-instruction name="mso-application">progid="Excel.Sheet"</xsl:processing-instruction>
 		<!--<?mso-application progid="Excel.Sheet"?>-->
@@ -98,7 +123,7 @@
 				</Style>
 			</Styles>
 			<Worksheet ss:Name="Feuil1">
-				<Table ss:ExpandedColumnCount="8" ss:ExpandedRowCount="6" x:FullColumns="1" x:FullRows="1" ss:DefaultColumnWidth="60" ss:DefaultRowHeight="15">
+				<Table ss:ExpandedColumnCount="8" ss:ExpandedRowCount="{5+count(//facture)}" x:FullColumns="1" x:FullRows="1" ss:DefaultColumnWidth="60" ss:DefaultRowHeight="15">
 					<Column ss:AutoFitWidth="0" ss:Width="9"/>
 					<Column ss:Width="114.75"/>
 					<Column ss:Width="100.5"/>
@@ -128,14 +153,18 @@
 							<Data ss:Type="String">Montant Total factures :</Data>
 						</Cell>
 						<Cell ss:StyleID="s21">
-							<Data ss:Type="Number"><xsl:value-of select="sum(//facture[contains(@type,'acture')]//stotligne)"/></Data>
+							<Data ss:Type="Number">
+								<xsl:value-of select="sum(//facture[contains(@type,'acture')]//stotligne)"/>
+							</Data>
 						</Cell>
 						<Cell ss:StyleID="s20"/>
 						<Cell ss:MergeAcross="1" ss:StyleID="s31">
 							<Data ss:Type="String">Montant total des devis :</Data>
 						</Cell>
 						<Cell ss:StyleID="s21">
-							<Data ss:Type="Number"><xsl:value-of select="sum(//facture[contains(@type,'evis')]//stotligne)"/></Data>
+							<Data ss:Type="Number">
+								<xsl:value-of select="sum(//facture[contains(@type,'evis')]//stotligne)"/>
+							</Data>
 						</Cell>
 					</Row>
 					<Row ss:Height="16.5">
@@ -158,26 +187,7 @@
 							<Data ss:Type="String">montant total facture</Data>
 						</Cell>
 					</Row>
-					<Row ss:Height="16.5">
-						<Cell ss:Index="2">
-							<Data ss:Type="String">FACT1</Data>
-						</Cell>
-						<Cell ss:StyleID="s16">
-							<Data ss:Type="DateTime">1970-01-01T00:00:00.000</Data>
-						</Cell>
-						<Cell>
-							<Data ss:Type="String">Jean pierre</Data>
-						</Cell>
-						<Cell>
-							<Data ss:Type="String">Devis</Data>
-						</Cell>
-						<Cell>
-							<Data ss:Type="String">REF-2245, REF-5648</Data>
-						</Cell>
-						<Cell ss:StyleID="s22">
-							<Data ss:Type="Number">99.99</Data>
-						</Cell>
-					</Row>
+					<xsl:apply-templates select="//facture"/>
 					<Row ss:Height="19.5" ss:StyleID="s20">
 						<Cell ss:Index="2" ss:StyleID="s24"/>
 						<Cell ss:StyleID="s24"/>
