@@ -52,7 +52,7 @@
 				<surface unite="m2">5</surface>
 				<phtByUnit>9.95</phtByUnit>
 				<nbUnit typeUnit="HOURBYMETER2">0.5</nbUnit>
-				<stotligne>24.875</stotligne>
+				<stotligne>24.876</stotligne>
 			</ligne>
 		</lignes>
 	</facture>
