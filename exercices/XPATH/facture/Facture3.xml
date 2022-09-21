@@ -75,7 +75,7 @@
 				<designation>Pose BA13 (forfait plaque +MO) au m2 </designation>
 				<surface unite="m2">15</surface>
 				<phtByUnit>9.95</phtByUnit>
-				<nbUnit typeUnit="HOURBYMETER2">0.5</nbUnit>
+				<nbUnit typeUnit="HOURBYMETER2">1.5</nbUnit>
 				<stotligne>69.65</stotligne>
 			</ligne>
 			<ligne>
