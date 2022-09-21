@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="svgGrap.xsl" type="text/xsl"?>
+<facturation dateTransfert="2012-09-21+02:00">
+	<statFile>
+		<facturesStat>
+			<avgNbUnitFacture refproduits="REF-2234;REF-2234;REF-2234;REF-2134;REF-2135-2;Ref123-69;Ref123-72;Ref1138-63">1.25</avgNbUnitFacture>
+			<ligneAvgFact>43.800625</ligneAvgFact>
+			<nbLignesFact>8</nbLignesFact>
+		</facturesStat>
+	</statFile>
+	<factures>
+		<facture idfacture="23" nomClient="Pierre Pol">
+			<prixAvgArticle refproduits="REF-2234">0.5</prixAvgArticle>
+			<ligneAvg>74.625</ligneAvg>
+			<nbLignes>1</nbLignes>
+		</facture>
+		<facture idfacture="11" nomClient="Pierre Pol">
+			<prixAvgArticle refproduits="REF-2234">0.5</prixAvgArticle>
+			<ligneAvg>24.875</ligneAvg>
+			<nbLignes>1</nbLignes>
+		</facture>
+		<facture idfacture="5" nomClient="Richard rostremer">
+			<prixAvgArticle refproduits="REF-2234;REF-2134;REF-2135-2">1.6666666666666666666666666</prixAvgArticle>
+			<ligneAvg>32.975</ligneAvg>
+			<nbLignes>3</nbLignes>
+		</facture>
+		<facture idfacture="1" nomClient="">
+			<prixAvgArticle refproduits="Ref123-69;Ref123-72">1.5</prixAvgArticle>
+			<ligneAvg>63.49</ligneAvg>
+			<nbLignes>2</nbLignes>
+		</facture>
+		<facture idfacture="1" nomClient="">
+			<prixAvgArticle refproduits="Ref1138-63">1</prixAvgArticle>
+			<ligneAvg>25</ligneAvg>
+			<nbLignes>1</nbLignes>
+		</facture>
+			<facture idfacture="23" nomClient="Pierre Pol">
+			<prixAvgArticle refproduits="REF-2234">0.5</prixAvgArticle>
+			<ligneAvg>74.625</ligneAvg>
+			<nbLignes>1</nbLignes>
+		</facture>
+		<facture idfacture="11" nomClient="Pierre Pol">
+			<prixAvgArticle refproduits="REF-2234">0.5</prixAvgArticle>
+			<ligneAvg>24.875</ligneAvg>
+			<nbLignes>1</nbLignes>
+		</facture>
+		<facture idfacture="5" nomClient="Richard rostremer">
+			<prixAvgArticle refproduits="REF-2234;REF-2134;REF-2135-2">1.6666666666666666666666666</prixAvgArticle>
+			<ligneAvg>32.975</ligneAvg>
+			<nbLignes>3</nbLignes>
+		</facture>
+		<facture idfacture="1" nomClient="">
+			<prixAvgArticle refproduits="Ref123-69;Ref123-72">1.5</prixAvgArticle>
+			<ligneAvg>63.49</ligneAvg>
+			<nbLignes>2</nbLignes>
+		</facture>
+	</factures>
+</facturation>
