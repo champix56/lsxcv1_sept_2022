@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:html="http://www.w3.org/TR/REC-html40">
 	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
+<!--	<xsl:variable name="docclient" select="document('clients.xml')"/>-->
 	<xsl:template match="facture">
 		<Row ss:Height="16.5">
 			<Cell ss:Index="2">
@@ -10,7 +11,12 @@
 				<Data ss:Type="DateTime"><xsl:value-of select="@datefacture"/>T00:00:00.000</Data>
 			</Cell>
 			<Cell>
-				<Data ss:Type="String"><xsl:value-of select="@idclient"/></Data>
+				<Data ss:Type="String">
+					<xsl:variable name="idcl" select="@idclient"/>
+					<!--<xsl:variable name="unClient" select="document('clients.xml')/clients/client[@id=$idcl]"/>
+					<xsl:value-of select="$unClient/destinataire"/>-->
+					<xsl:value-of select="$idcl"/>
+				</Data>
 			</Cell>
 			<Cell>
 				<Data ss:Type="String"><xsl:value-of select="@type"/></Data>
@@ -195,8 +201,8 @@
 						<Cell ss:MergeAcross="1" ss:StyleID="s35">
 							<Data ss:Type="String">SOMME DES LIGNES</Data>
 						</Cell>
-						<Cell ss:StyleID="s26" ss:Formula="=SUM(R[-1]C:R[-1]C)">
-							<Data ss:Type="Number">99.99</Data>
+						<Cell ss:StyleID="s26" ss:Formula="=SUM(R[-1]C:R[-{count(//facture)}]C)">
+							<Data ss:Type="Number"><xsl:value-of select="sum(//stotligne)"/></Data>
 						</Cell>
 					</Row>
 				</Table>
