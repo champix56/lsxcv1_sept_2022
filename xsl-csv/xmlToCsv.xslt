@@ -24,8 +24,10 @@ numfacture;<xsl:for-each select="//facture[.//ligne[count(*)=6]][1]//ligne[count
 		</xsl:for-each>
 		<xsl:for-each select="//ligne">
 			<xsl:value-of select="ancestor::facture/@numfacture"/>;<xsl:for-each select="*">
+			<!--gestion du cas ou le parent ligne ne possede pas de surface et que l'on est au niveau de la colone surface juste avant phtByUnit ( en etant sur que les balise soient toujours ordonnées dans le meme ordre-->			
 			<xsl:if test="name()='phtByUnit' and not(../surface)">;</xsl:if>
-				<xsl:value-of select="."/>
+			
+			<xsl:value-of select="."/>
 				<xsl:choose>
 					<!--cas jusqu'a l'avant dernier-->
 					<xsl:when test="position()!=last()">;</xsl:when>
