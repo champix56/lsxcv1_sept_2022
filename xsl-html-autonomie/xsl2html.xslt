@@ -173,9 +173,14 @@
 			<td >Total TVA</td>
 			<td><xsl:value-of select="myfn:calculTVA(.//stotligne)"/> </td>
 		</tr>
+		<tr>
+			<td colspan="4"><xsl:text> </xsl:text></td>
+			<td >Total TVA</td>
+			<td><xsl:value-of select="myfn:calculTVA(.//stotligne) + sum(.//stotligne)"/> </td>
+		</tr>
 	</xsl:template>
 	<xsl:function name="myfn:calculTVA">
 		<xsl:param name="nodes"/>
-		<xsl:value-of select="round(sum($nodes//*) * 20) div 100"/>
+		<xsl:value-of select="round(sum($nodes) * 20) div 100"/>
 	</xsl:function>
 </xsl:stylesheet>
