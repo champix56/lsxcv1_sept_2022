@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:hello="urn:orsys:test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:param="urn:xsl:param:facture" exclude-result-prefixes="hello param"  >
-	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
-	
+<xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:hello="urn:orsys:test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:param="urn:xsl:param:facture" exclude-result-prefixes="hello param"  >
 	<!--inclusion avec capacité de redef.-->
-	<xsl:include href="lib.xslt"/>
+	<xsl:import href="lib.xslt" />
+	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" />
+	
 	<xsl:template match="comment()"/>
 	<!--
 
@@ -11,7 +11,7 @@ template d'exclusion de traitement generiques
 
 	-->
 	<!--template ne faisant rien-->
-	<xsl:template match="ligne/nbUnit/@helloAttrib"/>
+	<xsl:template match="ligne/nbUnit/@helloAttrib" />
 	<!--template de traitement exclusif particulier-->
 	<xsl:template match="ligne/nbUnit[. &lt; 1]">
 		<xsl:element name="{name()}-rmp">
