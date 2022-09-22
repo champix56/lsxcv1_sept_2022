@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xsl:stylesheet [
+	<!ENTITY euro "&#8364;">
+	<!ENTITY nbsp "&#160;">
+]>
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions" exclude-result-prefixes="fn xs myfn" xmlns:myfn="urn:orsys:factures:mesfonctions">
 	<xsl:output method="html" encoding="iso-8859-1" indent="yes"/>
+	<xsl:decimal-format name="euro" decimal-separator="," grouping-separator=" "/>
 	<xsl:template match="/">
 		<html>
 			<head>
@@ -109,9 +114,7 @@
 			<br/>
 			<xsl:value-of select="adr2"/>
 			<br/>
-			<xsl:value-of select="cp"/>
-			<xsl:text> </xsl:text>
-			<xsl:value-of select="ville"/>
+			<xsl:value-of select="cp"/>&nbsp;<xsl:value-of select="ville"/>
 		</div>
 	</xsl:template>
 	<xsl:template match="lignes">
@@ -137,22 +140,15 @@
 	<xsl:template match="ligne">
 		<tr>
 			<td>
-				<xsl:value-of select="ref"/>
-			</td>
-			<td>
-				<xsl:value-of select="designation"/>
-			</td>
-			<td>
-				<xsl:value-of select="surface"/>
-			</td>
-			<td>
-				<xsl:value-of select="phtByUnit"/>
-			</td>
+				<xsl:value-of select="ref"/></td>
+			<td><xsl:value-of select="designation"/></td>
+			<td><xsl:value-of select="surface"/></td>
+			<td><xsl:value-of select="phtByUnit"/></td>
 			<td>
 				<xsl:value-of select="nbUnit"/>
 			</td>
 			<td>
-				<xsl:value-of select="stotligne"/>
+				<xsl:value-of select="fn:format-number(stotligne,'0,00&euro;','euro')"/>
 			</td>
 		</tr>
 	</xsl:template>
@@ -164,23 +160,39 @@
 	</xsl:template>
 	<xsl:template name="totaux">
 		<tr>
-			<td colspan="4"><xsl:text> </xsl:text></td>
-			<td >Total HT</td>
-			<td><xsl:value-of select="sum(.//stotligne)"/> </td>
+			<td colspan="4">
+				<xsl:text> </xsl:text>
+			</td>
+			<td>Total HT</td>
+			<td>
+				<xsl:value-of select="fn:format-number(myfn:roundCent(xs:decimal(sum(.//stotligne))),'0,00&euro;','euro')"/>
+			</td>
 		</tr>
 		<tr>
-			<td colspan="4"><xsl:text> </xsl:text></td>
-			<td >Total TVA</td>
-			<td><xsl:value-of select="myfn:calculTVA(.//stotligne)"/> </td>
+			<td colspan="4">
+				<xsl:text> </xsl:text>
+			</td>
+			<td>Total TVA</td>
+			<td>
+				<xsl:value-of select="fn:format-number(myfn:calculTVA(.//stotligne),'0,00&euro;','euro')"/>
+			</td>
 		</tr>
 		<tr>
-			<td colspan="4"><xsl:text> </xsl:text></td>
-			<td >Total TVA</td>
-			<td><xsl:value-of select="myfn:calculTVA(.//stotligne) + sum(.//stotligne)"/> </td>
+			<td colspan="4">
+				<xsl:text> </xsl:text>
+			</td>
+			<td>Total TVA</td>
+			<td>
+				<xsl:value-of select="fn:format-number(myfn:calculTVA(.//stotligne) + myfn:roundCent(sum(.//stotligne)),'0,00&euro;','euro')"/>
+			</td>
 		</tr>
 	</xsl:template>
 	<xsl:function name="myfn:calculTVA">
 		<xsl:param name="nodes"/>
-		<xsl:value-of select="round(sum($nodes) * 20) div 100"/>
+		<xsl:value-of select="myfn:roundCent(sum($nodes) *0.2 ) "/>
+	</xsl:function>
+	<xsl:function name="myfn:roundCent" as="xs:decimal">
+		<xsl:param name="value" as="xs:numeric"/>
+		<xsl:value-of select="fn:round($value * 100) div 100"/>
 	</xsl:function>
 </xsl:stylesheet>
