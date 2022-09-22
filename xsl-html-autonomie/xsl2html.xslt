@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions" exclude-result-prefixes="fn xs">
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions" exclude-result-prefixes="fn xs myfn" xmlns:myfn="urn:orsys:factures:mesfonctions">
 	<xsl:output method="html" encoding="iso-8859-1" indent="yes"/>
 	<xsl:template match="/">
 		<html>
@@ -130,13 +130,7 @@
 				<xsl:apply-templates select="ligne"/>
 			</tbody>
 			<tfoot>
-				<tr>
-					<th colspan="3">
-						<xsl:text> </xsl:text>
-					</th>
-					<th/>
-					<th/>
-				</tr>
+				<xsl:call-template name="totaux"/>
 			</tfoot>
 		</table>
 	</xsl:template>
@@ -168,4 +162,20 @@
 			<xsl:value-of select="/factures/@rsets"/>
 		</div>
 	</xsl:template>
+	<xsl:template name="totaux">
+		<tr>
+			<td colspan="4"><xsl:text> </xsl:text></td>
+			<td >Total HT</td>
+			<td><xsl:value-of select="sum(.//stotligne)"/> </td>
+		</tr>
+		<tr>
+			<td colspan="4"><xsl:text> </xsl:text></td>
+			<td >Total TVA</td>
+			<td><xsl:value-of select="myfn:calculTVA(.//stotligne)"/> </td>
+		</tr>
+	</xsl:template>
+	<xsl:function name="myfn:calculTVA">
+		<xsl:param name="nodes"/>
+		<xsl:value-of select="round(sum($nodes//*) * 20) div 100"/>
+	</xsl:function>
 </xsl:stylesheet>
