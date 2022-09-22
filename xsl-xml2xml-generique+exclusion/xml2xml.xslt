@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:hello="urn:orsys:test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
-	<!--<xsl:template match="text()">
+	<xsl:template match="processing-instruction()">
+		<xsl:processing-instruction name="{name()}"><xsl:value-of select="."/></xsl:processing-instruction>
+	</xsl:template>
+	<xsl:template match="comment()">
+		<xsl:comment><xsl:value-of select="."/></xsl:comment>
+	</xsl:template>
+	<!--
+	deja def. dans le core de xsl et ayant la meme action que ce template 
+<xsl:template match="text()">
 		<xsl:value-of select="."/>
 	</xsl:template>-->
 	<xsl:template match="*">
 		<xsl:element name="{name()}">
-			<xsl:apply-templates select="@*|*|text()"/>
+			<xsl:apply-templates select="@*|*|text()|processing-instruction()|comment()"/>
 		</xsl:element>
 	</xsl:template>
 	<xsl:template match="@*">
@@ -30,6 +38,6 @@ template d'exclusion de traitement generiques
 		</xsl:element>
 	</xsl:template>
 	<xsl:template match="/">
-		<xsl:apply-templates/>
+		<xsl:apply-templates select="*|processing-instruction()"/>
 	</xsl:template>
 </xsl:stylesheet>
