@@ -1,35 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:hello="urn:orsys:test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" exclude-result-prefixes="hello param"  xmlns:param="urn:xsl:param:facture">
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:hello="urn:orsys:test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:param="urn:xsl:param:facture" exclude-result-prefixes="hello param"  >
 	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
 	
+	<!--inclusion avec capacité de redef.-->
+	<xsl:include href="lib.xslt"/>
 	
-	<xsl:template match="processing-instruction()">
-		<xsl:processing-instruction name="{name()}">
-			<xsl:value-of select="."/>
-		</xsl:processing-instruction>
-	</xsl:template>
-	<xsl:template match="comment()">
-		<xsl:comment>
-			<xsl:value-of select="."/>
-		</xsl:comment>
-	</xsl:template>
-	<!--
-	deja def. dans le core de xsl et ayant la meme action que ce template 
-<xsl:template match="text()">
-		<xsl:value-of select="."/>
-	</xsl:template>-->
-	<xsl:template match="*">
-		<xsl:element name="{name()}">
-			<xsl:apply-templates select="@*|*|text()|processing-instruction()|comment()"/>
-		</xsl:element>
-	</xsl:template>
-	<xsl:template match="@*">
-		<xsl:variable name="n" select="name()"/>
-		<xsl:message>
-			<xsl:value-of select="$n"/>
-		</xsl:message>
-		<xsl:attribute name="{name()}"><xsl:value-of select="."/></xsl:attribute>
-	</xsl:template>
 	<!--
 
 template d'exclusion de traitement generiques
