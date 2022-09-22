@@ -4,7 +4,7 @@
 	
 	<!--inclusion avec capacité de redef.-->
 	<xsl:include href="lib.xslt"/>
-	
+	<xsl:template match="comment()"/>
 	<!--
 
 template d'exclusion de traitement generiques
