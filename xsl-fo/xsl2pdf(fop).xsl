@@ -10,8 +10,12 @@
 					<fo:region-after extent="5mm"/>
 					<!--<fo:region-before extent="2cm"/>-->
 				</fo:simple-page-master>
+				<fo:simple-page-master master-name="A4PortraitNoExternalBody" page-width="210mm" page-height="297mm">
+					<fo:region-body/>
+				</fo:simple-page-master>
 			</fo:layout-master-set>
 			<!--mon/ma sequence de contenu de page-->
+			<xsl:call-template name="sommaire"/>
 			<xsl:apply-templates select="//page"/>
 		</fo:root>
 	</xsl:template>
@@ -24,6 +28,7 @@
 							<xsl:value-of select="/photos/signature"/>
 						</fo:basic-link>
 					</fo:inline>
+					 - page <fo:page-number/> / <fo:page-number-citation ref-id="end_doc"/>
 				</fo:block>
 			</fo:static-content>
 			<fo:flow flow-name="xsl-region-body">
@@ -48,11 +53,14 @@
 						</fo:table-body>
 					</fo:table>
 				</fo:block>
+				<xsl:if test="position()=last()">
+					<fo:block id="end_doc"/>
+				</xsl:if>
 			</fo:flow>
 		</fo:page-sequence>
 	</xsl:template>
 	<xsl:template match="image">
-		<fo:table-cell>
+		<fo:table-cell id="{generate-id()}">
 			<fo:block text-align="center" margin-top="5mm">
 				<fo:external-graphic src="file:///{concat(@path,@href)}" scaling="uniform" content-height="97mm" content-width="97mm"/>
 				<fo:block/>
@@ -63,5 +71,57 @@
 				</xsl:if>
 			</fo:block>
 		</fo:table-cell>
+	</xsl:template>
+	<xsl:template name="sommaire">
+		<fo:page-sequence master-reference="A4PortraitNoExternalBody">
+			<fo:flow flow-name="xsl-region-body">
+				<fo:block>
+					<fo:block text-align="center" font-size="20pt" text-decoration="underline">
+						SOMMAIRE
+					</fo:block>
+					<fo:list-block margin-left="1cm">
+						<xsl:for-each select="//page">
+							<fo:list-item>
+								<fo:list-item-label end-indent="label-end()">
+									<fo:block>
+										<fo:instream-foreign-object content-height="mm" content-width="7mm" scaling="uniform">
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 108 108">
+												<g>
+													<circle r="50" cx="52" cy="52" fill="skyblue" stroke="black" stroke-width="5"/>
+												</g>
+											</svg>
+										</fo:instream-foreign-object>
+									</fo:block>
+								</fo:list-item-label>
+								<fo:list-item-body start-indent="body-start()">
+									<fo:block>page N° <xsl:value-of select="position()"/>
+										<fo:list-block>
+											<xsl:for-each select="image">
+												<fo:list-item>
+													<fo:list-item-label end-indent="label-end()">
+														<fo:block>
+															<fo:instream-foreign-object content-height="5mm" content-width="5mm" scaling="uniform">
+																<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 108 108">
+																	<g>
+																		<circle r="50" cx="52" cy="52" fill="tomato" stroke="black" stroke-width="5"/>
+																	</g>
+																</svg>
+															</fo:instream-foreign-object>
+														</fo:block>
+													</fo:list-item-label>
+													<fo:list-item-body start-indent="body-start()">
+														<fo:block text-decoration="underline" color="blue"><fo:basic-link internal-destination="{generate-id()}"><xsl:value-of select="@href"/></fo:basic-link></fo:block>
+													</fo:list-item-body>
+												</fo:list-item>
+											</xsl:for-each>
+										</fo:list-block>
+									</fo:block>
+								</fo:list-item-body>
+							</fo:list-item>
+						</xsl:for-each>
+					</fo:list-block>
+				</fo:block>
+			</fo:flow>
+		</fo:page-sequence>
 	</xsl:template>
 </xsl:stylesheet>
