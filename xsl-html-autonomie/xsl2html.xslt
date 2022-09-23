@@ -40,16 +40,25 @@
 			</head>
 			<body>
 				<div class="entete-liste-factures">
-					<h2>Liste des factures<br/> en date du : <xsl:value-of select="/factures/@dateeditionXML"/>
-						<hr/>
-					</h2>
+					<h2>Liste des factures<br/> en date du : <xsl:value-of select="/factures/@dateeditionXML"/></h2>
+					<xsl:apply-templates select="factures" mode="sommaire"/>
+					<hr/>
 				</div>
 				<xsl:apply-templates select="//facture"/>
 			</body>
 		</html>
 	</xsl:template>
+	<xsl:template match="@type"><xsl:apply-templates select="text()" mode="#current"/></xsl:template>
+	<xsl:template match="factures" mode="sommaire">
+		<ul>
+			<xsl:apply-templates select=".//facture" mode="#current"/>
+		</ul>
+	</xsl:template>
+	<xsl:template match="facture" mode="sommaire">
+		<li><a href="#F-{fn:generate-id()}"><xsl:apply-templates select="@type" mode="#current"/>&nbsp;<xsl:value-of select="@numfacture"/></a></li>
+	</xsl:template>
 	<xsl:template match="facture">
-		<div class="facture">
+		<div class="facture" id="F-{fn:generate-id()}">
 			<xsl:apply-templates select="/factures/@rsets"/>
 			<xsl:apply-templates select="@idclient"/>
 			<xsl:apply-templates select="@numfacture"/>
